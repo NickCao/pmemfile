@@ -22,6 +22,7 @@
               libcap
               libndctl
               pmdk
+              fuse
               packages.syscall_intercept
             ];
             postPatch = ''
@@ -33,7 +34,6 @@
             cmakeFlags = [
               "-DANTOOL_TESTS=SKIP"
               "-DBUILD_LIBPMEMFILE_TESTS=OFF"
-              "-DBUILD_PMEMFILE_FUSE=OFF"
             ];
           };
           packages.syscall_intercept = pkgs.stdenv.mkDerivation {
